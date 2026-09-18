@@ -2,512 +2,232 @@
 
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+```
 <title>For My Bachcha ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-html, body {
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        radial-gradient(circle at 20% 20%, #6d28d9 0%, transparent 35%),
-        radial-gradient(circle at 80% 80%, #db2777 0%, transparent 35%),
-        linear-gradient(135deg, #080018, #17002f, #09001c);
-
-    position: relative;
-}
-
-/* Background glow */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        radial-gradient(circle at center, rgba(255, 0, 128, 0.12), transparent 45%);
-
-    pointer-events: none;
-}
-
-/* Stars */
-.star {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1;
-    animation: twinkle 2s ease-in-out infinite;
-}
-
-@keyframes twinkle {
-    0%, 100% {
-        opacity: .2;
-        transform: scale(.7);
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    50% {
-        opacity: 1;
-        transform: scale(1.3);
+    body {
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: #ffe6ee;
+        color: #333;
+
+        padding: 20px;
     }
-}
-
-/* Main card */
-.container {
-    position: relative;
-    z-index: 10;
-
-    width: calc(100% - 30px);
-    max-width: 650px;
-    max-height: 92vh;
-
-    overflow-y: auto;
-
-    padding: 35px 22px;
-
-    text-align: center;
-
-    background: rgba(255,255,255,.10);
-    border: 1px solid rgba(255,255,255,.22);
-
-    border-radius: 30px;
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    box-shadow:
-        0 25px 80px rgba(0,0,0,.55),
-        inset 0 0 30px rgba(255,255,255,.04);
-
-    animation: cardIn 1s ease;
-}
-
-@keyframes cardIn {
-    from {
-        opacity: 0;
-        transform: scale(.8) translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-/* HUGE HEART */
-.big-heart {
-    width: 150px;
-    height: 150px;
-
-    margin: 0 auto 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 105px;
-
-    animation: giantHeart 1.15s ease-in-out infinite;
-
-    filter:
-        drop-shadow(0 0 15px #ff2d75)
-        drop-shadow(0 0 35px #ff2d75)
-        drop-shadow(0 0 65px rgba(255,45,117,.8));
-
-    user-select: none;
-}
-
-@keyframes giantHeart {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    15% {
-        transform: scale(1.18);
-    }
-
-    30% {
-        transform: scale(1);
-    }
-
-    45% {
-        transform: scale(1.25);
-    }
-
-    60% {
-        transform: scale(1.05);
-    }
-}
-
-h1 {
-    font-size: clamp(30px, 8vw, 46px);
-    margin-bottom: 20px;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,.4),
-        0 0 30px rgba(255,45,117,.5);
-}
-
-.typing {
-    min-height: 100px;
-
-    font-size: clamp(16px, 4.5vw, 20px);
-    line-height: 1.7;
-
-    margin-bottom: 15px;
-}
-
-.message {
-    font-size: clamp(16px, 4.5vw, 19px);
-    line-height: 1.8;
-}
-
-/* BUTTON */
-#secretButton {
-    position: relative;
-    z-index: 100;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 220px;
-    min-height: 58px;
-
-    padding: 15px 28px;
-
-    border: 0;
-    border-radius: 999px;
-
-    background: linear-gradient(135deg, #ffffff, #ffe6f1);
-
-    color: #e11d6f;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    touch-action: manipulation;
-    user-select: none;
-    -webkit-user-select: none;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.35),
-        0 0 25px rgba(255,105,180,.4);
-
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-#secretButton:hover {
-    transform: scale(1.07);
-}
-
-#secretButton:active {
-    transform: scale(.94);
-}
-
-/* Secret message */
-#secretMessage {
-    display: none;
-
-    margin-top: 25px;
-
-    animation: secretIn .8s ease;
-}
-
-@keyframes secretIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.secret-line {
-    margin-top: 18px;
-}
-
-.love-text {
-    margin-top: 25px;
-
-    font-size: clamp(21px, 6vw, 28px);
-    font-weight: bold;
-
-    animation: loveGlow 1.8s ease-in-out infinite;
-}
-
-@keyframes loveGlow {
-    0%, 100% {
-        text-shadow: 0 0 5px white;
-    }
-
-    50% {
-        text-shadow:
-            0 0 10px white,
-            0 0 25px #ff4f91,
-            0 0 45px #ff4f91;
-    }
-}
-
-/* Floating hearts */
-.floating-heart {
-    position: fixed;
-    bottom: -80px;
-
-    pointer-events: none;
-
-    z-index: 5;
-
-    animation: floatUp linear forwards;
-}
-
-@keyframes floatUp {
-    from {
-        transform: translateY(0) rotate(0deg) scale(1);
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(-120vh) rotate(360deg) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
 
     .container {
-        width: calc(100% - 20px);
-        padding: 28px 17px;
-        border-radius: 25px;
+        width: 100%;
+        max-width: 550px;
+
+        background: white;
+
+        padding: 40px 25px;
+
+        text-align: center;
+
+        border-radius: 20px;
+
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     }
 
-    .big-heart {
-        width: 125px;
-        height: 125px;
-        font-size: 88px;
+    .heart {
+        font-size: 70px;
         margin-bottom: 15px;
     }
 
     h1 {
-        margin-bottom: 15px;
+        font-size: 34px;
+        color: #e91e63;
+        margin-bottom: 20px;
+    }
+
+    .message {
+        font-size: 18px;
+        line-height: 1.7;
+        color: #444;
     }
 
     .typing {
-        min-height: 115px;
+        margin-bottom: 20px;
     }
 
-    #secretButton {
-        width: 90%;
-        max-width: 300px;
-        min-height: 60px;
+    button {
+        display: inline-block;
+
+        margin-top: 25px;
+
+        padding: 14px 28px;
+
+        border: none;
+        border-radius: 30px;
+
+        background: #e91e63;
+        color: white;
+
         font-size: 17px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        min-height: 50px;
+        min-width: 210px;
+
+        touch-action: manipulation;
     }
-}
+
+    button:active {
+        background: #c2185b;
+    }
+
+    #secretMessage {
+        display: none;
+
+        margin-top: 25px;
+
+        padding-top: 20px;
+
+        border-top: 1px solid #eee;
+    }
+
+    #secretMessage p {
+        margin-bottom: 18px;
+    }
+
+    .love-text {
+        margin-top: 25px;
+
+        font-size: 24px;
+        font-weight: bold;
+
+        color: #e91e63;
+    }
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 15px;
+        }
+
+        .container {
+            padding: 30px 20px;
+        }
+
+        .heart {
+            font-size: 60px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .message {
+            font-size: 17px;
+        }
+
+        button {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
 </style>
+```
 
 </head>
 
 <body>
 
-<!-- Stars -->
-
-<div class="star" style="left:8%;top:12%;">✨</div>
-<div class="star" style="left:85%;top:15%;">✨</div>
-<div class="star" style="left:18%;top:78%;">⭐</div>
-<div class="star" style="left:80%;top:75%;">✨</div>
-<div class="star" style="left:48%;top:8%;">⭐</div>
-<div class="star" style="left:60%;top:88%;">✨</div>
-
+```
 <div class="container">
 
-```
-<!-- HUGE HEART -->
-<div class="big-heart">❤️</div>
+    <div class="heart">
+        ❤️
+    </div>
 
-<h1>Hey Bachcha 🥺❤️</h1>
+    <h1>
+        Hey Bachcha 🥺❤️
+    </h1>
 
-<div class="typing" id="typingText"></div>
+    <div class="message">
 
-<div class="message">
-
-    <p>
-        Thank you meri life mein hone ke liye. 🫶
-    </p>
-
-    <br>
-
-    <button id="secretButton" type="button">
-        Click Karo Bachcha 💌
-    </button>
-
-    <div id="secretMessage">
-
-        <p class="secret-line">
+        <p class="typing">
             Tum meri life ka woh beautiful part ho
             jiske bina sab kuch thoda incomplete sa
             lagta hai. ❤️
         </p>
 
-        <p class="secret-line">
-            Tumhari smile meri favourite cheez hai,
-            aur tumhara khush rehna mere liye
-            sabse important hai. 🥺🫶
+        <p>
+            Thank you meri life mein hone ke liye. 🫶
         </p>
 
-        <p class="secret-line">
-            Chahe kuch bhi ho jaye,
-            bas hamesha aise hi mere saath rehna. ❤️
-        </p>
+        <button id="secretButton" type="button">
+            Click Karo Bachcha 💌
+        </button>
 
-        <div class="love-text">
-            I Love You Bachcha ❤️🥺
-            <br>
-            Hamesha mere saath rehna. 🫶
+        <div id="secretMessage">
+
+            <p>
+                Tum meri life ka woh beautiful part ho
+                jiske bina sab kuch thoda incomplete sa
+                lagta hai. ❤️
+            </p>
+
+            <p>
+                Tumhari smile meri favourite cheez hai,
+                aur tumhara khush rehna mere liye
+                sabse important hai. 🥺🫶
+            </p>
+
+            <p>
+                Chahe kuch bhi ho jaye,
+                bas hamesha aise hi mere saath rehna. ❤️
+            </p>
+
+            <div class="love-text">
+                I Love You Bachcha ❤️🥺
+                <br>
+                Hamesha mere saath rehna. 🫶
+            </div>
+
         </div>
 
     </div>
 
 </div>
-```
 
-</div>
 
 <script>
 
-/* Typing */
-const text =
-"Tu meri life ka woh beautiful part hai jiske bina sab kuch thoda incomplete sa lagta hai. ❤️";
+    const button =
+        document.getElementById("secretButton");
 
-let index = 0;
-
-function typeText() {
-
-    if (index < text.length) {
-
-        document.getElementById("typingText").textContent +=
-            text.charAt(index);
-
-        index++;
-
-        setTimeout(typeText, 45);
-    }
-}
-
-typeText();
+    const secretMessage =
+        document.getElementById("secretMessage");
 
 
-/* Secret button */
-const button =
-document.getElementById("secretButton");
+    button.addEventListener("click", function () {
 
-const secret =
-document.getElementById("secretMessage");
+        secretMessage.style.display = "block";
 
-let opened = false;
+        button.textContent = "❤️ Bachcha ❤️";
 
-function openSecret(event) {
-
-    if (event) {
-        event.preventDefault();
-    }
-
-    if (opened) return;
-
-    opened = true;
-
-    secret.style.display = "block";
-
-    button.textContent = "❤️ Bachcha ❤️";
-
-    /* Heart explosion */
-    for (let i = 0; i < 40; i++) {
-
-        setTimeout(() => {
-            createHeart();
-        }, i * 60);
-    }
-}
-
-/*
-   CLICK + TOUCH
-   Works on desktop and mobile.
-*/
-button.addEventListener("click", openSecret);
-
-button.addEventListener("touchend", openSecret, {
-    passive: false
-});
-
-
-/* Create floating heart */
-function createHeart() {
-
-    const heart =
-    document.createElement("div");
-
-    heart.className = "floating-heart";
-
-    const hearts = [
-        "❤️",
-        "💖",
-        "💕",
-        "💗",
-        "💓",
-        "💘",
-        "💝",
-        "🥰"
-    ];
-
-    heart.textContent =
-        hearts[Math.floor(Math.random() * hearts.length)];
-
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
-    heart.style.fontSize =
-        (18 + Math.random() * 35) + "px";
-
-    heart.style.animationDuration =
-        (4 + Math.random() * 5) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 10000);
-}
-
-
-/* Automatic hearts */
-setInterval(() => {
-    createHeart();
-}, 1000);
+    });
 
 </script>
+```
 
 </body>
 </html>
