@@ -1,346 +1,360 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For My Bachcha ❤️</title>
+```
+<title>For My Bachcha ❤️</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: linear-gradient(
+            -45deg,
+            #ff416c,
+            #ff4b8b,
+            #8e44ad,
+            #ff758c
+        );
+
+        background-size: 400% 400%;
+        animation: backgroundMove 12s ease infinite;
+
+        color: white;
+    }
+
+    @keyframes backgroundMove {
+        0% {
+            background-position: 0% 50%;
         }
 
-        body {
-            min-height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: linear-gradient(
-                -45deg,
-                #ff416c,
-                #ff4b8b,
-                #8e44ad,
-                #ff758c
-            );
-
-            background-size: 400% 400%;
-            animation: backgroundMove 12s ease infinite;
-
-            color: white;
+        50% {
+            background-position: 100% 50%;
         }
 
-        @keyframes backgroundMove {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+        100% {
+            background-position: 0% 50%;
         }
+    }
+
+    .container {
+        width: 90%;
+        max-width: 650px;
+
+        padding: 45px 28px;
+
+        text-align: center;
+
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 30px;
+
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+        animation: containerAppear 1.5s ease;
+
+        position: relative;
+        z-index: 10;
+    }
+
+    @keyframes containerAppear {
+        from {
+            opacity: 0;
+            transform: scale(0.6) translateY(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .heart {
+        font-size: 80px;
+        animation: heartBeat 1s infinite;
+        margin-bottom: 10px;
+    }
+
+    @keyframes heartBeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.25);
+        }
+    }
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 20px;
+
+        text-shadow:
+            0 5px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .typing {
+        min-height: 90px;
+
+        font-size: 20px;
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+    }
+
+    .message {
+        font-size: 19px;
+        line-height: 1.8;
+        margin-top: 20px;
+    }
+
+    /* ❤️ FIXED MOBILE BUTTON */
+    #secretButton {
+        position: relative;
+        z-index: 20;
+
+        border: none;
+        outline: none;
+
+        padding: 15px 30px;
+
+        border-radius: 50px;
+
+        font-size: 17px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        background: white;
+        color: #e84393;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.25);
+
+        transition: transform 0.3s;
+
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+
+        pointer-events: auto;
+    }
+
+    #secretButton:hover {
+        transform: scale(1.1);
+    }
+
+    #secretButton:active {
+        transform: scale(0.95);
+    }
+
+    #secretMessage {
+        display: none;
+        animation: secretAppear 1.5s ease;
+    }
+
+    @keyframes secretAppear {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .love-text {
+        font-size: 25px;
+
+        font-weight: bold;
+
+        margin-top: 25px;
+
+        animation: glow 2s infinite;
+    }
+
+    @keyframes glow {
+        0%, 100% {
+            text-shadow: 0 0 5px white;
+        }
+
+        50% {
+            text-shadow:
+                0 0 10px white,
+                0 0 25px white,
+                0 0 40px #ffb6c1;
+        }
+    }
+
+    .floating-heart {
+        position: fixed;
+
+        bottom: -60px;
+
+        pointer-events: none;
+
+        animation: floatHeart linear forwards;
+
+        z-index: 1;
+    }
+
+    @keyframes floatHeart {
+        0% {
+            transform:
+                translateY(0)
+                rotate(0deg)
+                scale(1);
+
+            opacity: 1;
+        }
+
+        100% {
+            transform:
+                translateY(-110vh)
+                rotate(360deg)
+                scale(1.5);
+
+            opacity: 0;
+        }
+    }
+
+    .star {
+        position: fixed;
+
+        font-size: 20px;
+
+        animation: twinkle 2s infinite;
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+    @keyframes twinkle {
+        0%, 100% {
+            opacity: 0.2;
+            transform: scale(0.7);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.3);
+        }
+    }
+
+    @media (max-width: 600px) {
 
         .container {
-            width: 90%;
-            max-width: 650px;
-
-            padding: 45px 28px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.14);
-            backdrop-filter: blur(18px);
-
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-
-            animation: containerAppear 1.5s ease;
-
-            z-index: 10;
-        }
-
-        @keyframes containerAppear {
-            from {
-                opacity: 0;
-                transform: scale(0.6) translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .heart {
-            font-size: 80px;
-
-            animation: heartBeat 1s infinite;
-
-            margin-bottom: 10px;
-        }
-
-        @keyframes heartBeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.25);
-            }
+            padding: 35px 20px;
         }
 
         h1 {
-            font-size: 42px;
-
-            margin-bottom: 20px;
-
-            text-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.25);
+            font-size: 32px;
         }
 
-        .typing {
-            min-height: 90px;
-
-            font-size: 20px;
-            line-height: 1.7;
-
-            margin-bottom: 20px;
+        .heart {
+            font-size: 60px;
         }
 
+        .typing,
         .message {
-            font-size: 19px;
-            line-height: 1.8;
-
-            margin-top: 20px;
-        }
-
-        button {
-            border: none;
-            outline: none;
-
-            padding: 15px 30px;
-
-            border-radius: 50px;
-
             font-size: 17px;
-            font-weight: bold;
-
-            cursor: pointer;
-
-            background: white;
-            color: #e84393;
-
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.25);
-
-            transition: 0.3s;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-        #secretMessage {
-            display: none;
-
-            animation: secretAppear 1.5s ease;
-        }
-
-        @keyframes secretAppear {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .love-text {
-            font-size: 25px;
-
-            font-weight: bold;
-
-            margin-top: 25px;
-
-            animation: glow 2s infinite;
+            font-size: 21px;
         }
 
-        @keyframes glow {
-            0%, 100% {
-                text-shadow: 0 0 5px white;
-            }
-
-            50% {
-                text-shadow:
-                    0 0 10px white,
-                    0 0 25px white,
-                    0 0 40px #ffb6c1;
-            }
+        #secretButton {
+            padding: 16px 28px;
+            font-size: 16px;
         }
+    }
+</style>
+```
 
-        .floating-heart {
-            position: fixed;
-
-            bottom: -60px;
-
-            pointer-events: none;
-
-            animation: floatHeart linear forwards;
-
-            z-index: 1;
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform:
-                    translateY(0)
-                    rotate(0deg)
-                    scale(1);
-
-                opacity: 1;
-            }
-
-            100% {
-                transform:
-                    translateY(-110vh)
-                    rotate(360deg)
-                    scale(1.5);
-
-                opacity: 0;
-            }
-        }
-
-        .star {
-            position: fixed;
-
-            font-size: 20px;
-
-            animation: twinkle 2s infinite;
-
-            pointer-events: none;
-        }
-
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0.2;
-                transform: scale(0.7);
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1.3);
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .container {
-                padding: 35px 20px;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            .heart {
-                font-size: 60px;
-            }
-
-            .typing,
-            .message {
-                font-size: 17px;
-            }
-
-            .love-text {
-                font-size: 21px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- ✨ Background -->
-    <div class="star" style="left: 10%; top: 12%;">✨</div>
-    <div class="star" style="left: 85%; top: 18%;">✨</div>
-    <div class="star" style="left: 20%; top: 80%;">✨</div>
-    <div class="star" style="left: 75%; top: 75%;">✨</div>
-    <div class="star" style="left: 50%; top: 10%;">⭐</div>
+```
+<!-- ✨ Background -->
+<div class="star" style="left: 10%; top: 12%;">✨</div>
+<div class="star" style="left: 85%; top: 18%;">✨</div>
+<div class="star" style="left: 20%; top: 80%;">✨</div>
+<div class="star" style="left: 75%; top: 75%;">✨</div>
+<div class="star" style="left: 50%; top: 10%;">⭐</div>
 
-    <!-- ❤️ Main Card -->
-    <div class="container">
+<!-- ❤️ Main Card -->
+<div class="container">
 
-        <div class="heart">
-            ❤️
-        </div>
+    <div class="heart">
+        ❤️
+    </div>
 
-        <h1>
-            Hey Bachcha 🥺❤️
-        </h1>
+    <h1>
+        Hey Bachcha 🥺❤️
+    </h1>
 
-        <!-- Typing Text -->
-        <div class="typing" id="typingText"></div>
+    <!-- Typing Text -->
+    <div class="typing" id="typingText"></div>
 
-        <div class="message">
+    <div class="message">
 
-            <p>
-                Thank you meri life mein hone ke liye. 🫶
+        <p>
+            Thank you meri life mein hone ke liye. 🫶
+        </p>
+
+        <br>
+
+        <button id="secretButton" type="button">
+            Click Karo Bachcha 💌
+        </button>
+
+        <!-- Hidden Message -->
+        <div id="secretMessage">
+
+            <p style="margin-top: 25px;">
+                Tum meri life ka woh beautiful part ho
+                jiske bina sab kuch thoda incomplete sa lagta hai. ❤️
             </p>
 
-            <br>
+            <p style="margin-top: 20px;">
+                Tumhari smile meri favourite cheez hai,
+                aur tumhara khush rehna mere liye
+                sabse important hai. 🥺🫶
+            </p>
 
-            <button onclick="showSecret()">
-                Click Karo Bachcha 💌
-            </button>
+            <p style="margin-top: 20px;">
+                Chahe kuch bhi ho jaye,
+                bas hamesha aise hi mere saath rehna. ❤️
+            </p>
 
-            <!-- Hidden Message -->
-            <div id="secretMessage">
+            <div class="love-text">
 
-                <p style="margin-top: 25px;">
-                    Tum meri life ka woh beautiful part ho
-                    jiske bina sab kuch thoda incomplete sa lagta hai. ❤️
-                </p>
+                I Love You Bachcha ❤️🥺
 
-                <p style="margin-top: 20px;">
-                    Tumhari smile meri favourite cheez hai,
-                    aur tumhara khush rehna mere liye
-                    sabse important hai. 🥺🫶
-                </p>
+                <br>
 
-                <p style="margin-top: 20px;">
-                    Chahe kuch bhi ho jaye,
-                    bas hamesha aise hi mere saath rehna. ❤️
-                </p>
-
-                <div class="love-text">
-
-                    I Love You Bachcha ❤️🥺
-
-                    <br>
-
-                    Hamesha mere saath rehna. 🫶
-
-                </div>
+                Hamesha mere saath rehna. 🫶
 
             </div>
 
@@ -348,109 +362,128 @@
 
     </div>
 
-    <script>
+</div>
 
-        // ❤️ Typing Animation
+<script>
 
-        const text =
-            "Tum meri life ka woh beautiful part ho jiske bina sab kuch thoda incomplete sa lagta hai. ❤️";
+    // ❤️ Typing Animation
 
-        let index = 0;
+    const text =
+        "Tum meri life ka woh beautiful part ho jiske bina sab kuch thoda incomplete sa lagta hai. ❤️";
 
-        function typeText() {
+    let index = 0;
 
-            if (index < text.length) {
+    function typeText() {
 
-                document.getElementById("typingText").innerHTML +=
-                    text.charAt(index);
+        if (index < text.length) {
 
-                index++;
+            document.getElementById("typingText").innerHTML +=
+                text.charAt(index);
 
-                setTimeout(typeText, 45);
-            }
+            index++;
+
+            setTimeout(typeText, 45);
         }
+    }
 
-        typeText();
+    typeText();
 
 
-        // 💌 Show Secret Message
+    // 💌 Secret Button
 
-        function showSecret() {
+    const secretButton =
+        document.getElementById("secretButton");
 
-            const secret =
-                document.getElementById("secretMessage");
+    const secretMessage =
+        document.getElementById("secretMessage");
 
-            secret.style.display = "block";
 
-            // ❤️ Heart explosion
+    function showSecret() {
 
-            for (let i = 0; i < 35; i++) {
+        secretMessage.style.display = "block";
 
-                setTimeout(
-                    createHeart,
-                    i * 80
-                );
-            }
+        // ❤️ Heart explosion
+
+        for (let i = 0; i < 35; i++) {
+
+            setTimeout(
+                createHeart,
+                i * 80
+            );
         }
+    }
 
 
-        // ❤️ Floating Hearts
+    // 📱 Mobile + Desktop click/touch support
 
-        function createHeart() {
+    secretButton.addEventListener("click", showSecret);
 
-            const heart =
-                document.createElement("div");
+    secretButton.addEventListener("touchend", function(event) {
 
-            heart.className =
-                "floating-heart";
+        event.preventDefault();
 
-            const heartList = [
-                "❤️",
-                "💖",
-                "💕",
-                "💗",
-                "💓",
-                "💘",
-                "💝"
+        showSecret();
+
+    });
+
+
+    // ❤️ Floating Hearts
+
+    function createHeart() {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "floating-heart";
+
+        const heartList = [
+            "❤️",
+            "💖",
+            "💕",
+            "💗",
+            "💓",
+            "💘",
+            "💝"
+        ];
+
+        heart.innerHTML =
+            heartList[
+                Math.floor(
+                    Math.random() *
+                    heartList.length
+                )
             ];
 
-            heart.innerHTML =
-                heartList[
-                    Math.floor(
-                        Math.random() *
-                        heartList.length
-                    )
-                ];
+        heart.style.left =
+            Math.random() * 100 + "vw";
 
-            heart.style.left =
-                Math.random() * 100 + "vw";
+        heart.style.fontSize =
+            (18 + Math.random() * 30) + "px";
 
-            heart.style.fontSize =
-                (18 + Math.random() * 30) + "px";
+        heart.style.animationDuration =
+            (4 + Math.random() * 5) + "s";
 
-            heart.style.animationDuration =
-                (4 + Math.random() * 5) + "s";
+        document.body.appendChild(heart);
 
-            document.body.appendChild(heart);
+        setTimeout(() => {
 
-            setTimeout(() => {
+            heart.remove();
 
-                heart.remove();
-
-            }, 9000);
-        }
+        }, 9000);
+    }
 
 
-        // ❤️ Automatic Hearts
+    // ❤️ Automatic Hearts
 
-        setInterval(() => {
+    setInterval(() => {
 
-            createHeart();
+        createHeart();
 
-        }, 900);
+    }, 900);
 
-    </script>
+</script>
+```
 
 </body>
 </html>
-```
