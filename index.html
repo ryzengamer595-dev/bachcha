@@ -1,109 +1,278 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>For My Bachcha ❤️</title>
 
     <style>
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            margin: 0;
             min-height: 100vh;
+            overflow: hidden;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3, #c471ed);
+
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+
+            background: linear-gradient(
+                -45deg,
+                #ff416c,
+                #ff4b8b,
+                #8e44ad,
+                #ff758c
+            );
+
+            background-size: 400% 400%;
+            animation: backgroundMove 12s ease infinite;
+
             color: white;
         }
 
-        .card {
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
             width: 90%;
-            max-width: 550px;
-            padding: 45px 30px;
+            max-width: 650px;
+
+            padding: 45px 28px;
+
             text-align: center;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.3);
+
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+            animation: containerAppear 1.5s ease;
+
+            z-index: 10;
+        }
+
+        @keyframes containerAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         .heart {
-            font-size: 75px;
-            animation: beat 1s infinite;
+            font-size: 80px;
+
+            animation: heartBeat 1s infinite;
+
+            margin-bottom: 10px;
         }
 
-        @keyframes beat {
+        @keyframes heartBeat {
             0%, 100% {
                 transform: scale(1);
             }
+
             50% {
-                transform: scale(1.2);
+                transform: scale(1.25);
             }
         }
 
         h1 {
-            font-size: 45px;
-            margin: 15px 0;
+            font-size: 42px;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.25);
         }
 
-        p {
-            font-size: 19px;
+        .typing {
+            min-height: 90px;
+
+            font-size: 20px;
             line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 19px;
+            line-height: 1.8;
+
+            margin-top: 20px;
         }
 
         button {
-            margin-top: 20px;
-            padding: 15px 30px;
             border: none;
-            border-radius: 30px;
-            background: white;
-            color: #ff4f81;
-            font-size: 18px;
+            outline: none;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            font-size: 17px;
             font-weight: bold;
+
             cursor: pointer;
+
+            background: white;
+            color: #e84393;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.25);
+
             transition: 0.3s;
         }
 
         button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transform: scale(1.1);
         }
 
-        #message {
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #secretMessage {
             display: none;
-            margin-top: 25px;
-            font-size: 21px;
+
+            animation: secretAppear 1.5s ease;
+        }
+
+        @keyframes secretAppear {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .love-text {
+            font-size: 25px;
+
             font-weight: bold;
+
+            margin-top: 25px;
+
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 5px white;
+            }
+
+            50% {
+                text-shadow:
+                    0 0 10px white,
+                    0 0 25px white,
+                    0 0 40px #ffb6c1;
+            }
         }
 
         .floating-heart {
-            position: absolute;
-            bottom: -50px;
-            font-size: 25px;
-            animation: float 6s linear infinite;
-            opacity: 0.7;
+            position: fixed;
+
+            bottom: -60px;
+
+            pointer-events: none;
+
+            animation: floatHeart linear forwards;
+
+            z-index: 1;
         }
 
-        @keyframes float {
+        @keyframes floatHeart {
             0% {
-                transform: translateY(0);
-                opacity: 0;
-            }
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(1);
 
-            20% {
-                opacity: 0.8;
+                opacity: 1;
             }
 
             100% {
-                transform: translateY(-110vh);
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg)
+                    scale(1.5);
+
                 opacity: 0;
+            }
+        }
+
+        .star {
+            position: fixed;
+
+            font-size: 20px;
+
+            animation: twinkle 2s infinite;
+
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .heart {
+                font-size: 60px;
+            }
+
+            .typing,
+            .message {
+                font-size: 17px;
+            }
+
+            .love-text {
+                font-size: 21px;
             }
         }
     </style>
@@ -111,58 +280,177 @@
 
 <body>
 
-    <div class="card">
+    <!-- ✨ Background -->
+    <div class="star" style="left: 10%; top: 12%;">✨</div>
+    <div class="star" style="left: 85%; top: 18%;">✨</div>
+    <div class="star" style="left: 20%; top: 80%;">✨</div>
+    <div class="star" style="left: 75%; top: 75%;">✨</div>
+    <div class="star" style="left: 50%; top: 10%;">⭐</div>
 
-        <div class="heart">❤️</div>
+    <!-- ❤️ Main Card -->
+    <div class="container">
 
-        <h1>Hey Bachcha 🥺❤️</h1>
+        <div class="heart">
+            ❤️
+        </div>
 
-        <p>
-            Tum meri life ka woh beautiful part ho
-            jiske bina sab kuch thoda incomplete sa lagta hai. ❤️
-        </p>
+        <h1>
+            Hey Bachcha 🥺❤️
+        </h1>
 
-        <p>
-            Thank you meri life mein hone ke liye. 🫶
-        </p>
+        <!-- Typing Text -->
+        <div class="typing" id="typingText"></div>
 
-        <button onclick="showLove()">
-            Click Karo Bachcha 💌
-        </button>
+        <div class="message">
 
-        <div id="message">
-            I Love You Bachcha ❤️🥺<br>
-            Hamesha mere saath rehna. 🫶
+            <p>
+                Thank you meri life mein hone ke liye. 🫶
+            </p>
+
+            <br>
+
+            <button onclick="showSecret()">
+                Click Karo Bachcha 💌
+            </button>
+
+            <!-- Hidden Message -->
+            <div id="secretMessage">
+
+                <p style="margin-top: 25px;">
+                    Tum meri life ka woh beautiful part ho
+                    jiske bina sab kuch thoda incomplete sa lagta hai. ❤️
+                </p>
+
+                <p style="margin-top: 20px;">
+                    Tumhari smile meri favourite cheez hai,
+                    aur tumhara khush rehna mere liye
+                    sabse important hai. 🥺🫶
+                </p>
+
+                <p style="margin-top: 20px;">
+                    Chahe kuch bhi ho jaye,
+                    bas hamesha aise hi mere saath rehna. ❤️
+                </p>
+
+                <div class="love-text">
+
+                    I Love You Bachcha ❤️🥺
+
+                    <br>
+
+                    Hamesha mere saath rehna. 🫶
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
     <script>
-        function showLove() {
-            document.getElementById("message").style.display = "block";
 
-            for (let i = 0; i < 20; i++) {
-                createHeart();
+        // ❤️ Typing Animation
+
+        const text =
+            "Tum meri life ka woh beautiful part ho jiske bina sab kuch thoda incomplete sa lagta hai. ❤️";
+
+        let index = 0;
+
+        function typeText() {
+
+            if (index < text.length) {
+
+                document.getElementById("typingText").innerHTML +=
+                    text.charAt(index);
+
+                index++;
+
+                setTimeout(typeText, 45);
             }
         }
 
+        typeText();
+
+
+        // 💌 Show Secret Message
+
+        function showSecret() {
+
+            const secret =
+                document.getElementById("secretMessage");
+
+            secret.style.display = "block";
+
+            // ❤️ Heart explosion
+
+            for (let i = 0; i < 35; i++) {
+
+                setTimeout(
+                    createHeart,
+                    i * 80
+                );
+            }
+        }
+
+
+        // ❤️ Floating Hearts
+
         function createHeart() {
-            const heart = document.createElement("div");
 
-            heart.innerHTML = "❤️";
-            heart.className = "floating-heart";
+            const heart =
+                document.createElement("div");
 
-            heart.style.left = Math.random() * 100 + "vw";
+            heart.className =
+                "floating-heart";
+
+            const heartList = [
+                "❤️",
+                "💖",
+                "💕",
+                "💗",
+                "💓",
+                "💘",
+                "💝"
+            ];
+
+            heart.innerHTML =
+                heartList[
+                    Math.floor(
+                        Math.random() *
+                        heartList.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (18 + Math.random() * 30) + "px";
+
             heart.style.animationDuration =
-                (3 + Math.random() * 4) + "s";
+                (4 + Math.random() * 5) + "s";
 
             document.body.appendChild(heart);
 
             setTimeout(() => {
+
                 heart.remove();
-            }, 7000);
+
+            }, 9000);
         }
+
+
+        // ❤️ Automatic Hearts
+
+        setInterval(() => {
+
+            createHeart();
+
+        }, 900);
+
     </script>
 
 </body>
 </html>
+```
