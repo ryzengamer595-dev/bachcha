@@ -20,9 +20,22 @@
       --purple: #a855f7;
     }
 
+    html {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar {
+      display: none;
+    }
+
     body {
       min-height: 100vh;
+      width: 100%;
       overflow-x: hidden;
+
       font-family: "Segoe UI", Arial, sans-serif;
       color: white;
 
@@ -56,6 +69,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
       padding: 25px;
     }
 
@@ -513,7 +527,7 @@
     }
 
     #secret.show {
-      max-height: 800px;
+      max-height: 1200px;
 
       opacity: 1;
 
@@ -534,6 +548,9 @@
 
       border:
         1px solid rgba(255,92,168,.10);
+
+      box-shadow:
+        0 0 35px rgba(255,92,168,.05);
     }
 
     .signature {
@@ -542,6 +559,74 @@
       font-size: 14px;
 
       color: #9f8a98;
+    }
+
+    /* MADE BY AKRAM */
+
+    .made-by {
+      margin-top: 30px;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      color: var(--aqua);
+
+      text-shadow:
+        0 0 5px rgba(57,255,243,.5),
+        0 0 15px rgba(57,255,243,.45),
+        0 0 30px rgba(57,255,243,.25);
+
+      animation:
+        aquaGlow 2s ease-in-out infinite,
+        aquaMove 4s linear infinite;
+
+      background:
+        linear-gradient(
+          90deg,
+          #39fff3,
+          #ffffff,
+          #39fff3,
+          #7ffff8,
+          #39fff3
+        );
+
+      background-size: 300%;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    @keyframes aquaGlow {
+      0%, 100% {
+        opacity: .75;
+
+        filter:
+          drop-shadow(0 0 5px rgba(57,255,243,.3));
+      }
+
+      50% {
+        opacity: 1;
+
+        filter:
+          drop-shadow(0 0 14px rgba(57,255,243,.8));
+      }
+    }
+
+    @keyframes aquaMove {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 300%;
+      }
     }
 
     /* CLICK HEART */
@@ -616,6 +701,11 @@
 
         padding: 14px 25px;
       }
+
+      .made-by {
+        font-size: 11px;
+        letter-spacing: 4px;
+      }
     }
   </style>
 </head>
@@ -625,6 +715,7 @@
   <!-- PARTICLES -->
 
   <div class="particles">
+
     <span></span>
     <span></span>
     <span></span>
@@ -632,17 +723,20 @@
     <span></span>
     <span></span>
     <span></span>
+
   </div>
 
 
   <!-- FLOATING HEARTS -->
 
   <div class="hearts">
+
     <span>❤️</span>
     <span>💗</span>
     <span>💕</span>
     <span>💖</span>
     <span>❤️</span>
+
   </div>
 
 
@@ -734,69 +828,124 @@
 
         <br><br>
 
-        Sach bolu toh kabhi-kabhi mujhe samajh nahi aata
-        ki main words mein kaise explain karu
-        ki tum mere liye kitni important ho.
+        Agar tum yahan tak aa gayi ho,
+        toh shayad tumhe pata chal hi gaya hoga
+        ki ye website sirf ek website nahi hai. 🥹
+
+        <br><br>
+
+        Maine iske har ek part ko banate waqt
+        bas ek hi cheez sochi...
+
+        <br>
+
+        <span class="highlight">
+          "Kaash ye dekhte waqt Mehak ke face par ek smile aa jaye." 💗
+        </span>
+
+        <br><br>
+
+        Sach kahun toh,
+        mujhe nahi pata future mein kya hoga,
+        life humein kahan le jayegi,
+        aur kitni cheezein change hongi.
+
+        <br><br>
+
+        Lekin aaj ke liye,
+        main bas itna kehna chahta hoon...
 
         <br><br>
 
         Tumse baat karna,
         tumhare saath random bakwaas karna,
         ek dusre ko irritate karna,
-        phir bina kisi reason ke hasna...
+        bina kisi reason ke hasna...
 
         <br><br>
 
-        Ye chhoti-chhoti cheezein hi toh hain
-        jo mere liye sabse zyada matter karti hain. 🥹💗
+        Ye sab mere liye
+        ordinary moments nahi hain.
+
+        <br>
+
+        <span class="highlight">
+          Ye woh little moments hain
+          jo meri memories ko special banate hain. 🥺❤️
+        </span>
 
         <br><br>
 
-        Main ye nahi bolunga ki
-        har din perfect hoga,
-        kyunki life mein ups aur downs toh aate hain.
+        Tumhari smile,
+        tumhari cute si nok-jhok,
+        tumhara randomly mujhe irritate karna,
+        aur phir kuch der baad normal ho jaana...
 
         <br><br>
 
-        Lekin ek cheez dil se chahta hoon...
+        Pata nahi kab
+        ye sab meri favourite things ban gayi.
+
+        <br><br>
+
+        Main koi perfect insaan hone ka promise nahi karta.
+
+        <br><br>
+
+        Lekin ek chhoti si wish zaroor hai...
 
         <br><br>
 
         <span class="highlight">
-          Jab bhi tum sad ho,
-          main tumhari smile ka reason ban paun.
+          Jab tum sad ho,
+          toh tumhe smile karane ki wajah ban paun. ❤️
         </span>
 
         <br><br>
 
         Jab tum khush ho,
-        toh tumhari happiness mein
-        thoda sa mera bhi hissa ho.
+        toh tumhari happiness ko
+        aur thoda celebrate kar paun.
 
         <br><br>
 
-        Tumhari apni ek alag si vibe hai,
-        jise words mein explain karna
-        mere liye honestly mushkil hai.
+        Aur jab life difficult ho,
+        toh kam se kam itna yaad rahe
+        ki koi hai jo tumhari smile ko
+        genuinely important maanta hai.
 
         <br><br>
 
         Tum meri favourite notification ho,
         favourite conversation ho,
-        aur honestly...
+        favourite bakwaas partner ho...
 
         <br><br>
 
+        Aur haan...
+
+        <br>
+
         <span class="highlight">
-          meri favourite person ho. 💗
+          meri favourite person bhi ho. 💗
         </span>
 
         <br><br>
 
-        Thank you meri life mein aane ke liye,
-        mujhe smile karane ke liye,
-        aur itni saari beautiful memories ka
-        part banne ke liye.
+        Thank you...
+
+        <br>
+
+        Meri life ke kuch moments ko
+        itna beautiful banane ke liye.
+
+        <br><br>
+
+        Thank you meri random conversations,
+        meri hasi,
+        meri bakwaas,
+        aur meri memories ka
+        ek beautiful part banne ke liye.
 
         <br><br>
 
@@ -806,12 +955,17 @@
 
         <br><br>
 
-        Aur haan...
+        Aur agar tum abhi smile kar rahi ho...
+
+        <br><br>
+
+        Toh samajh lo...
 
         <br>
 
-        Ye website banane mein kaafi mehnat lagi hai,
-        toh ab smile karna compulsory hai. 😂💗
+        <span class="highlight">
+          mera mission successful ho gaya. 😂💗
+        </span>
 
       </p>
 
@@ -819,6 +973,13 @@
       <p class="signature">
         Hamesha aise hi smile karti rehna. ✨
       </p>
+
+
+      <!-- MADE BY -->
+
+      <div class="made-by">
+        MADE BY AKRAM
+      </div>
 
     </div>
 
@@ -844,7 +1005,9 @@
         index++;
 
         setTimeout(typeText, 65);
+
       }
+
     }
 
     setTimeout(typeText, 900);
@@ -865,7 +1028,7 @@
       if (secret.classList.contains("show")) {
 
         button.textContent =
-          "Ab Smile Karna Banta Hai ❤️";
+          "Bas Ab Smile Kar Do ❤️";
 
         createHeartBurst();
 
@@ -873,7 +1036,9 @@
 
         button.textContent =
           "Tumhare Liye Ek Surprise Hai 💌";
+
       }
+
     }
 
 
@@ -887,10 +1052,11 @@
         "💕",
         "💖",
         "💘",
-        "✨"
+        "✨",
+        "🥹"
       ];
 
-      for (let i = 0; i < 18; i++) {
+      for (let i = 0; i < 22; i++) {
 
         const heart =
           document.createElement("div");
@@ -956,7 +1122,9 @@
           () => heart.remove(),
           1800
         );
+
       }
+
     }
 
 
@@ -995,6 +1163,7 @@
           () => heart.remove(),
           900
         );
+
       }
     );
 
