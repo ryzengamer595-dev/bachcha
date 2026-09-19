@@ -17,9 +17,7 @@
       --pink: #ff5ca8;
       --light-pink: #ffb4d8;
       --aqua: #39fff3;
-      --aqua-soft: #9afff8;
       --purple: #a855f7;
-      --white: #ffffff;
     }
 
     body {
@@ -58,13 +56,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       padding: 25px;
     }
-
-    /* =========================
-       ANIMATED BACKGROUND
-    ========================= */
 
     @keyframes backgroundMove {
       0% {
@@ -80,9 +73,7 @@
       }
     }
 
-    /* =========================
-       PARTICLES
-    ========================= */
+    /* PARTICLES */
 
     .particles span {
       position: fixed;
@@ -168,9 +159,7 @@
       }
     }
 
-    /* =========================
-       FLOATING HEARTS
-    ========================= */
+    /* FLOATING HEARTS */
 
     .hearts span {
       position: fixed;
@@ -234,9 +223,7 @@
       }
     }
 
-    /* =========================
-       MAIN CARD
-    ========================= */
+    /* MAIN CARD */
 
     .card {
       position: relative;
@@ -288,9 +275,7 @@
       }
     }
 
-    /* =========================
-       CARD BORDER GLOW
-    ========================= */
+    /* CARD GLOW */
 
     .card::before {
       content: "";
@@ -334,9 +319,7 @@
       }
     }
 
-    /* =========================
-       HEART
-    ========================= */
+    /* HEART */
 
     .bigHeart {
       display: inline-block;
@@ -368,9 +351,7 @@
       }
     }
 
-    /* =========================
-       TITLE
-    ========================= */
+    /* TITLE */
 
     h1 {
       margin-top: 15px;
@@ -409,9 +390,7 @@
       }
     }
 
-    /* =========================
-       TYPING
-    ========================= */
+    /* TYPING */
 
     .subtitle {
       min-height: 28px;
@@ -425,9 +404,7 @@
       line-height: 1.6;
     }
 
-    /* =========================
-       MESSAGE BOX
-    ========================= */
+    /* MESSAGE */
 
     .message {
       margin: 30px auto;
@@ -473,9 +450,7 @@
         0 0 12px rgba(255,92,168,.25);
     }
 
-    /* =========================
-       BUTTON
-    ========================= */
+    /* BUTTON */
 
     button {
       border: none;
@@ -520,9 +495,7 @@
       transform: scale(.96);
     }
 
-    /* =========================
-       SECRET MESSAGE
-    ========================= */
+    /* SECRET MESSAGE */
 
     #secret {
       max-height: 0;
@@ -571,101 +544,7 @@
       color: #9f8a98;
     }
 
-    /* =========================
-       MADE BY AKRAM
-    ========================= */
-
-    .made-by {
-      margin-top: 25px;
-
-      display: inline-block;
-
-      position: relative;
-
-      color: var(--aqua);
-
-      font-size: 15px;
-
-      font-weight: 800;
-
-      letter-spacing: 5px;
-
-      text-transform: uppercase;
-
-      text-shadow:
-        0 0 5px var(--aqua),
-        0 0 12px var(--aqua),
-        0 0 25px var(--aqua),
-        0 0 45px rgba(57,255,243,.75);
-
-      animation:
-        aquaGlow 2s ease-in-out infinite alternate,
-        madeByFloat 3s ease-in-out infinite;
-    }
-
-    .made-by::before,
-    .made-by::after {
-      content: "";
-
-      position: absolute;
-
-      top: 50%;
-
-      width: 35px;
-
-      height: 1px;
-
-      background: var(--aqua);
-
-      box-shadow:
-        0 0 8px var(--aqua),
-        0 0 15px var(--aqua);
-
-      opacity: .7;
-    }
-
-    .made-by::before {
-      right: calc(100% + 14px);
-    }
-
-    .made-by::after {
-      left: calc(100% + 14px);
-    }
-
-    @keyframes aquaGlow {
-      from {
-        opacity: .75;
-
-        text-shadow:
-          0 0 5px var(--aqua),
-          0 0 12px var(--aqua),
-          0 0 20px var(--aqua);
-      }
-
-      to {
-        opacity: 1;
-
-        text-shadow:
-          0 0 6px var(--aqua),
-          0 0 16px var(--aqua),
-          0 0 30px var(--aqua),
-          0 0 50px rgba(57,255,243,.6);
-      }
-    }
-
-    @keyframes madeByFloat {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-3px);
-      }
-    }
-
-    /* =========================
-       CLICK HEART
-    ========================= */
+    /* CLICK HEART */
 
     .click-heart {
       position: fixed;
@@ -698,9 +577,7 @@
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 600px) {
 
@@ -738,25 +615,6 @@
         font-size: 15px;
 
         padding: 14px 25px;
-      }
-
-      .made-by {
-        font-size: 13px;
-
-        letter-spacing: 4px;
-      }
-
-      .made-by::before,
-      .made-by::after {
-        width: 22px;
-      }
-
-      .made-by::before {
-        right: calc(100% + 9px);
-      }
-
-      .made-by::after {
-        left: calc(100% + 9px);
       }
     }
   </style>
@@ -917,23 +775,6 @@
 
         <br><br>
 
-        Aur jab kabhi tumhe lage
-        ki tum ordinary ho...
-
-        <br><br>
-
-        toh ek baar meri nazar se
-        khud ko dekh lena.
-
-        <br><br>
-
-        Kyunki meri nazar mein
-        <span class="highlight">
-          tum bilkul ordinary nahi ho. ❤️
-        </span>
-
-        <br><br>
-
         Tumhari apni ek alag si vibe hai,
         jise words mein explain karna
         mere liye honestly mushkil hai.
@@ -979,13 +820,6 @@
         Hamesha aise hi smile karti rehna. ✨
       </p>
 
-
-      <!-- MADE BY -->
-
-      <div class="made-by">
-        MADE BY AKRAM
-      </div>
-
     </div>
 
   </main>
@@ -993,9 +827,7 @@
 
   <script>
 
-    /* =========================
-       TYPING ANIMATION
-    ========================= */
+    /* TYPING ANIMATION */
 
     const text =
       "Tumhare liye kuch chhota sa banaya hai... ❤️";
@@ -1018,9 +850,7 @@
     setTimeout(typeText, 900);
 
 
-    /* =========================
-       SURPRISE
-    ========================= */
+    /* SURPRISE */
 
     function showSurprise() {
 
@@ -1047,9 +877,7 @@
     }
 
 
-    /* =========================
-       HEART BURST
-    ========================= */
+    /* HEART BURST */
 
     function createHeartBurst() {
 
@@ -1132,9 +960,7 @@
     }
 
 
-    /* =========================
-       CLICK HEART
-    ========================= */
+    /* CLICK HEART */
 
     document.addEventListener(
       "click",
