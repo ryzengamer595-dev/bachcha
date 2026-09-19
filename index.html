@@ -6,7 +6,6 @@
   <title>Mehak Ke Liye ❤️</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -75,7 +74,6 @@
     }
 
     @keyframes backgroundMove {
-
       0% {
         background-position: 0% 50%;
       }
@@ -87,16 +85,12 @@
       100% {
         background-position: 0% 50%;
       }
-
     }
 
     .particles span {
-
       position: fixed;
-
       width: 3px;
       height: 3px;
-
       border-radius: 50%;
 
       background: var(--aqua);
@@ -106,7 +100,6 @@
         0 0 15px var(--aqua);
 
       opacity: 0;
-
       pointer-events: none;
 
       animation: particleFloat linear infinite;
@@ -160,7 +153,6 @@
     }
 
     @keyframes particleFloat {
-
       0% {
         transform: translateY(35vh) scale(.5);
         opacity: 0;
@@ -174,19 +166,13 @@
         transform: translateY(-110vh) scale(1.3);
         opacity: 0;
       }
-
     }
 
     .hearts span {
-
       position: fixed;
-
       bottom: -50px;
-
       font-size: 20px;
-
       opacity: 0;
-
       pointer-events: none;
 
       animation: heartFloat 10s linear infinite;
@@ -218,7 +204,6 @@
     }
 
     @keyframes heartFloat {
-
       0% {
         transform:
           translateY(0)
@@ -240,11 +225,9 @@
 
         opacity: 0;
       }
-
     }
 
     .card {
-
       position: relative;
 
       width: min(94%, 700px);
@@ -279,7 +262,6 @@
     }
 
     @keyframes cardAppear {
-
       from {
         opacity: 0;
         transform:
@@ -293,15 +275,12 @@
           translateY(0)
           scale(1);
       }
-
     }
 
     .card::before {
-
       content: "";
 
       position: absolute;
-
       inset: -1px;
 
       border-radius: 33px;
@@ -321,12 +300,10 @@
       animation: borderMove 7s linear infinite;
 
       z-index: -1;
-
       opacity: .7;
     }
 
     @keyframes borderMove {
-
       0% {
         background-position: 0% 50%;
       }
@@ -338,11 +315,9 @@
       100% {
         background-position: 0% 50%;
       }
-
     }
 
     .bigHeart {
-
       display: inline-block;
 
       font-size: 65px;
@@ -355,7 +330,6 @@
     }
 
     @keyframes heartbeat {
-
       0%, 100% {
         transform: scale(1);
       }
@@ -371,11 +345,9 @@
       45% {
         transform: scale(1.12);
       }
-
     }
 
     h1 {
-
       margin-top: 15px;
 
       font-size:
@@ -404,7 +376,6 @@
     }
 
     @keyframes titleMove {
-
       0% {
         background-position: 0%;
       }
@@ -412,11 +383,9 @@
       100% {
         background-position: 300%;
       }
-
     }
 
     .subtitle {
-
       min-height: 28px;
 
       margin-top: 12px;
@@ -429,7 +398,6 @@
     }
 
     .message {
-
       margin: 30px auto;
 
       max-width: 560px;
@@ -455,7 +423,6 @@
     }
 
     .message:hover {
-
       transform: translateY(-4px);
 
       border-color:
@@ -467,7 +434,6 @@
     }
 
     .highlight {
-
       color: var(--light-pink);
 
       font-weight: 600;
@@ -478,9 +444,7 @@
     }
 
     button {
-
       border: none;
-
       outline: none;
 
       padding:
@@ -511,7 +475,6 @@
     }
 
     button:hover {
-
       transform:
         translateY(-4px)
         scale(1.04);
@@ -522,12 +485,10 @@
     }
 
     button:active {
-
       transform: scale(.96);
     }
 
     #secret {
-
       max-height: 0;
 
       overflow: hidden;
@@ -543,7 +504,6 @@
     }
 
     #secret.show {
-
       max-height: 1500px;
 
       opacity: 1;
@@ -552,7 +512,6 @@
     }
 
     .secretText {
-
       color: #f3dce9;
 
       line-height: 1.9;
@@ -573,7 +532,6 @@
     }
 
     .signature {
-
       margin-top: 18px;
 
       font-size: 14px;
@@ -582,7 +540,6 @@
     }
 
     .made-by {
-
       position: fixed;
 
       left: 50%;
@@ -629,7 +586,6 @@
     }
 
     @keyframes aquaMove {
-
       0% {
         background-position: 0% 50%;
       }
@@ -637,13 +593,10 @@
       100% {
         background-position: 300% 50%;
       }
-
     }
 
     @keyframes aquaGlow {
-
       0%, 100% {
-
         opacity: .75;
 
         filter:
@@ -654,7 +607,6 @@
       }
 
       50% {
-
         opacity: 1;
 
         filter:
@@ -663,11 +615,9 @@
             rgba(57,255,243,.95)
           );
       }
-
     }
 
     .click-heart {
-
       position: fixed;
 
       pointer-events: none;
@@ -681,9 +631,7 @@
     }
 
     @keyframes clickHeart {
-
       0% {
-
         transform:
           translate(-50%,-50%)
           scale(.5);
@@ -692,20 +640,17 @@
       }
 
       100% {
-
         transform:
           translate(-50%,-150px)
           scale(1.5);
 
         opacity: 0;
       }
-
     }
 
     @media (max-width: 600px) {
 
       body {
-
         padding:
           18px 0 80px;
 
@@ -713,7 +658,6 @@
       }
 
       .card {
-
         width: 94%;
 
         padding:
@@ -721,29 +665,24 @@
       }
 
       .bigHeart {
-
         font-size: 55px;
       }
 
       h1 {
-
         font-size: 46px;
       }
 
       .message {
-
         padding: 20px;
 
         font-size: 14px;
       }
 
       .secretText {
-
         font-size: 14px;
       }
 
       button {
-
         font-size: 15px;
 
         padding:
@@ -751,24 +690,20 @@
       }
 
       .made-by {
-
         bottom: 10px;
 
         font-size: 10px;
 
         letter-spacing: 3px;
       }
-
     }
 
   </style>
-
 </head>
 
 <body>
 
   <div class="particles">
-
     <span></span>
     <span></span>
     <span></span>
@@ -776,18 +711,15 @@
     <span></span>
     <span></span>
     <span></span>
-
   </div>
 
 
   <div class="hearts">
-
     <span>❤️</span>
     <span>💗</span>
     <span>💕</span>
     <span>💖</span>
     <span>❤️</span>
-
   </div>
 
 
@@ -872,9 +804,7 @@
     </div>
 
 
-    <button
-      onclick="showSurprise()"
-    >
+    <button onclick="showSurprise()">
       Tumhare Liye Ek Surprise Hai 💌
     </button>
 
@@ -993,76 +923,6 @@
 
           aur jis din hum shaadi karenge,
           us din tum meri favourite wife banogi. ❤️
-
-        </span>
-
-        <br><br>
-
-        <span class="highlight">
-
-          Aur us dream life mein
-          main tumhe hi dekhta hoon. ❤️
-
-        </span>
-
-        <br><br>
-
-        Thank you meri life mein aane ke liye.
-
-        <br>
-
-        Thank you meri smile ka reason banne ke liye.
-
-        <br>
-
-        Thank you meri random conversations,
-        meri bakwaas,
-        meri happiness
-        aur meri memories ka part banne ke liye.
-
-        <br><br>
-
-        Aur agar kabhi tumhe lage
-        ki main tumhe kitna pyaar karta hoon...
-
-        <br>
-
-        toh bas ye website dobara open kar lena. 🥹
-
-        <br><br>
-
-        <span class="highlight">
-
-          Because I don't just want
-          a moment with you...
-
-          <br><br>
-
-          I want a lifetime with you. ❤️
-
-        </span>
-
-        <br><br>
-
-        <span class="highlight">
-
-          I love you, Mehak. ❤️
-
-        </span>
-
-        <br><br>
-
-        Ek din jab hum sach mein shaadi karenge,
-        toh main tumhe ye website dikhaunga
-        aur bolunga...
-
-        <br><br>
-
-        <span class="highlight">
-
-          "Dekha tha na...
-          maine pehle hi kaha tha,
-          tum meri favourite wife banogi." 😂❤️
 
         </span>
 
@@ -1224,7 +1084,6 @@
         heart.animate(
 
           [
-
             {
               transform:
                 "translate(-50%, -50%) scale(.5)",
