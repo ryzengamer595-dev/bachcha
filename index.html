@@ -32,11 +32,13 @@
     }
 
     body {
-      min-height: 100vh;
       width: 100%;
+      min-height: 100vh;
+
       overflow-x: hidden;
 
       font-family: "Segoe UI", Arial, sans-serif;
+
       color: white;
 
       background:
@@ -64,16 +66,22 @@
         );
 
       background-size: 200% 200%;
-      animation: backgroundMove 14s ease infinite;
+
+      animation:
+        backgroundMove 14s ease infinite;
 
       display: flex;
+
       justify-content: center;
       align-items: center;
 
       padding: 25px;
+
+      padding-bottom: 90px;
     }
 
     @keyframes backgroundMove {
+
       0% {
         background-position: 0% 50%;
       }
@@ -85,11 +93,16 @@
       100% {
         background-position: 0% 50%;
       }
+
     }
 
-    /* PARTICLES */
+
+    /* =========================
+       PARTICLES
+    ========================= */
 
     .particles span {
+
       position: fixed;
 
       width: 3px;
@@ -107,8 +120,11 @@
 
       pointer-events: none;
 
-      animation: particleFloat linear infinite;
+      animation:
+        particleFloat linear infinite;
+
     }
+
 
     .particles span:nth-child(1) {
       left: 7%;
@@ -157,9 +173,14 @@
       animation-delay: 1s;
     }
 
+
     @keyframes particleFloat {
+
       0% {
-        transform: translateY(35vh) scale(.5);
+        transform:
+          translateY(35vh)
+          scale(.5);
+
         opacity: 0;
       }
 
@@ -168,15 +189,24 @@
       }
 
       100% {
-        transform: translateY(-110vh) scale(1.3);
+        transform:
+          translateY(-110vh)
+          scale(1.3);
+
         opacity: 0;
       }
+
     }
 
-    /* FLOATING HEARTS */
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
 
     .hearts span {
+
       position: fixed;
+
       bottom: -50px;
 
       font-size: 20px;
@@ -185,8 +215,11 @@
 
       pointer-events: none;
 
-      animation: heartFloat 10s linear infinite;
+      animation:
+        heartFloat 10s linear infinite;
+
     }
+
 
     .hearts span:nth-child(1) {
       left: 7%;
@@ -213,14 +246,18 @@
       animation-delay: 4s;
     }
 
+
     @keyframes heartFloat {
+
       0% {
+
         transform:
           translateY(0)
           scale(.5)
           rotate(0deg);
 
         opacity: 0;
+
       }
 
       15% {
@@ -228,18 +265,25 @@
       }
 
       100% {
+
         transform:
           translateY(-115vh)
           scale(1.3)
           rotate(25deg);
 
         opacity: 0;
+
       }
+
     }
 
-    /* MAIN CARD */
+
+    /* =========================
+       MAIN CARD
+    ========================= */
 
     .card {
+
       position: relative;
 
       width: min(94%, 700px);
@@ -261,37 +305,59 @@
       border-radius: 32px;
 
       backdrop-filter: blur(25px);
+
       -webkit-backdrop-filter: blur(25px);
 
       box-shadow:
-        0 0 60px rgba(255, 60, 170, .10),
-        0 0 100px rgba(57,255,243,.06),
-        inset 0 0 50px rgba(255,255,255,.025);
 
-      animation: cardAppear 1.2s ease;
+        0 0 60px
+        rgba(255,60,170,.10),
+
+        0 0 100px
+        rgba(57,255,243,.06),
+
+        inset 0 0 50px
+        rgba(255,255,255,.025);
+
+      animation:
+        cardAppear 1.2s ease;
 
       z-index: 2;
+
     }
 
+
     @keyframes cardAppear {
+
       from {
+
         opacity: 0;
+
         transform:
           translateY(50px)
           scale(.92);
+
       }
 
       to {
+
         opacity: 1;
+
         transform:
           translateY(0)
           scale(1);
+
       }
+
     }
 
-    /* CARD GLOW */
+
+    /* =========================
+       CARD BORDER GLOW
+    ========================= */
 
     .card::before {
+
       content: "";
 
       position: absolute;
@@ -312,14 +378,18 @@
 
       background-size: 250% 250%;
 
-      animation: borderMove 7s linear infinite;
+      animation:
+        borderMove 7s linear infinite;
 
       z-index: -1;
 
       opacity: .7;
+
     }
 
+
     @keyframes borderMove {
+
       0% {
         background-position: 0% 50%;
       }
@@ -331,11 +401,16 @@
       100% {
         background-position: 0% 50%;
       }
+
     }
 
-    /* HEART */
+
+    /* =========================
+       HEART
+    ========================= */
 
     .bigHeart {
+
       display: inline-block;
 
       font-size: 65px;
@@ -344,10 +419,14 @@
         drop-shadow(0 0 10px #ff4f9a)
         drop-shadow(0 0 30px #ff4f9a);
 
-      animation: heartbeat 1.5s infinite;
+      animation:
+        heartbeat 1.5s infinite;
+
     }
 
+
     @keyframes heartbeat {
+
       0%, 100% {
         transform: scale(1);
       }
@@ -363,14 +442,20 @@
       45% {
         transform: scale(1.12);
       }
+
     }
 
-    /* TITLE */
+
+    /* =========================
+       TITLE
+    ========================= */
 
     h1 {
+
       margin-top: 15px;
 
-      font-size: clamp(42px, 9vw, 68px);
+      font-size:
+        clamp(42px, 9vw, 68px);
 
       font-weight: 700;
 
@@ -387,14 +472,19 @@
       background-size: 300%;
 
       -webkit-background-clip: text;
+
       background-clip: text;
 
       color: transparent;
 
-      animation: titleMove 6s linear infinite;
+      animation:
+        titleMove 6s linear infinite;
+
     }
 
+
     @keyframes titleMove {
+
       0% {
         background-position: 0%;
       }
@@ -402,11 +492,16 @@
       100% {
         background-position: 300%;
       }
+
     }
 
-    /* TYPING */
+
+    /* =========================
+       TYPING
+    ========================= */
 
     .subtitle {
+
       min-height: 28px;
 
       margin-top: 12px;
@@ -416,11 +511,16 @@
       font-size: 16px;
 
       line-height: 1.6;
+
     }
 
-    /* MESSAGE */
+
+    /* =========================
+       MAIN MESSAGE
+    ========================= */
 
     .message {
+
       margin: 30px auto;
 
       max-width: 560px;
@@ -440,33 +540,48 @@
       line-height: 1.85;
 
       box-shadow:
-        inset 0 0 25px rgba(255,255,255,.015);
+        inset 0 0 25px
+        rgba(255,255,255,.015);
 
       transition: .4s;
+
     }
 
+
     .message:hover {
-      transform: translateY(-4px);
+
+      transform:
+        translateY(-4px);
 
       border-color:
         rgba(57,255,243,.18);
 
       box-shadow:
-        0 10px 35px rgba(57,255,243,.07);
+        0 10px 35px
+        rgba(57,255,243,.07);
+
     }
 
+
     .highlight {
+
       color: var(--light-pink);
 
       font-weight: 600;
 
       text-shadow:
-        0 0 12px rgba(255,92,168,.25);
+        0 0 12px
+        rgba(255,92,168,.25);
+
     }
 
-    /* BUTTON */
+
+    /* =========================
+       BUTTON
+    ========================= */
 
     button {
+
       border: none;
 
       outline: none;
@@ -491,27 +606,41 @@
         );
 
       box-shadow:
-        0 10px 35px rgba(255,50,150,.25);
+        0 10px 35px
+        rgba(255,50,150,.25);
 
       transition: .3s;
+
     }
 
+
     button:hover {
+
       transform:
         translateY(-4px)
         scale(1.04);
 
       box-shadow:
-        0 15px 45px rgba(255,50,150,.40);
+        0 15px 45px
+        rgba(255,50,150,.40);
+
     }
+
 
     button:active {
-      transform: scale(.96);
+
+      transform:
+        scale(.96);
+
     }
 
-    /* SECRET MESSAGE */
+
+    /* =========================
+       SECRET
+    ========================= */
 
     #secret {
+
       max-height: 0;
 
       overflow: hidden;
@@ -521,20 +650,29 @@
       margin-top: 0;
 
       transition:
-        max-height 1.2s ease,
+
+        max-height 1.3s ease,
+
         opacity .9s ease,
+
         margin .8s ease;
+
     }
 
+
     #secret.show {
-      max-height: 1200px;
+
+      max-height: 1500px;
 
       opacity: 1;
 
       margin-top: 28px;
+
     }
 
+
     .secretText {
+
       color: #f3dce9;
 
       line-height: 1.9;
@@ -547,37 +685,53 @@
         rgba(255,92,168,.045);
 
       border:
-        1px solid rgba(255,92,168,.10);
+        1px solid
+        rgba(255,92,168,.10);
 
       box-shadow:
-        0 0 35px rgba(255,92,168,.05);
+        0 0 35px
+        rgba(255,92,168,.05);
+
     }
 
+
     .signature {
+
       margin-top: 18px;
 
       font-size: 14px;
 
       color: #9f8a98;
+
     }
 
-    /* MADE BY AKRAM */
+
+    /* =========================
+       FIXED MADE BY AKRAM
+    ========================= */
 
     .made-by {
+
       position: fixed;
 
-      bottom: 18px;
       left: 50%;
 
-      transform: translateX(-50%);
+      bottom: 18px;
+
+      transform:
+        translateX(-50%);
+
+      z-index: 999999;
+
+      pointer-events: none;
+
+      white-space: nowrap;
 
       font-size: 13px;
 
-      font-weight: 700;
+      font-weight: 800;
 
       letter-spacing: 5px;
-
-      white-space: nowrap;
 
       text-transform: uppercase;
 
@@ -591,32 +745,40 @@
           #39fff3
         );
 
-      background-size: 300%;
+      background-size: 300% 100%;
 
       -webkit-background-clip: text;
+
       background-clip: text;
 
       color: transparent;
 
       animation:
+
         aquaMove 4s linear infinite,
+
         aquaGlow 2s ease-in-out infinite;
 
-      z-index: 10000;
     }
 
+
     @keyframes aquaMove {
+
       0% {
-        background-position: 0%;
+        background-position: 0% 50%;
       }
 
       100% {
-        background-position: 300%;
+        background-position: 300% 50%;
       }
+
     }
 
+
     @keyframes aquaGlow {
+
       0%, 100% {
+
         opacity: .75;
 
         filter:
@@ -624,104 +786,153 @@
             0 0 5px
             rgba(57,255,243,.35)
           );
+
       }
 
       50% {
+
         opacity: 1;
 
         filter:
           drop-shadow(
-            0 0 15px
-            rgba(57,255,243,.9)
+            0 0 18px
+            rgba(57,255,243,.95)
           );
+
       }
+
     }
 
-    /* CLICK HEART */
+
+    /* =========================
+       CLICK HEART
+    ========================= */
 
     .click-heart {
+
       position: fixed;
 
       pointer-events: none;
 
-      z-index: 9999;
+      z-index: 99999;
 
       font-size: 20px;
 
       animation:
         clickHeart .9s ease forwards;
+
     }
 
+
     @keyframes clickHeart {
+
       0% {
+
         transform:
           translate(-50%, -50%)
           scale(.5);
 
         opacity: 1;
+
       }
 
       100% {
+
         transform:
           translate(-50%, -150px)
           scale(1.5);
 
         opacity: 0;
+
       }
+
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 600px) {
 
       body {
-        padding: 18px 0 55px;
+
+        padding:
+          18px 0 80px;
 
         overflow-y: auto;
+
       }
+
 
       .card {
+
         width: 94%;
 
-        padding: 38px 19px;
+        padding:
+          38px 19px;
+
       }
+
 
       .bigHeart {
+
         font-size: 55px;
+
       }
+
 
       h1 {
+
         font-size: 46px;
+
       }
 
+
       .message {
+
         padding: 20px;
 
         font-size: 14px;
+
       }
+
 
       .secretText {
+
         font-size: 14px;
+
       }
+
 
       button {
+
         font-size: 15px;
 
-        padding: 14px 25px;
+        padding:
+          14px 25px;
+
       }
 
+
       .made-by {
-        bottom: 12px;
+
+        bottom: 10px;
 
         font-size: 10px;
 
         letter-spacing: 3px;
+
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- PARTICLES -->
 
@@ -755,6 +966,7 @@
 
   <main class="card">
 
+
     <div class="bigHeart">
       ❤️
     </div>
@@ -778,42 +990,56 @@
       <p>
 
         Pata hai Mehak...
-        ye koi normal website nahi hai. 🥹
+
+        <br>
+
+        ye koi normal website nahi hai. 🥹❤️
 
         <br><br>
 
-        Bas mann kiya ki tumhare liye
-        kuch aisa banaun jo tum jab bhi dekho,
-        tumhare face pe ek chhoti si smile aa jaye. ❤️
+        Maine ye tumhare liye banayi hai,
+        kyunki kabhi-kabhi jo feelings dil mein hoti hain,
+        unhe words mein bolna mushkil ho jaata hai.
+
+        <br><br>
+
+        Main tumse bahut pyaar karta hoon.
 
         <br><br>
 
         Tum meri life mein sirf ek person nahi ho.
-        Tum woh ho jisse baat karne ke baad
-        mood automatically thoda better ho jaata hai.
+        Tum woh ho jiske saath main apna future imagine karta hoon.
 
         <br><br>
 
-        Tumhari chhoti-chhoti baatein,
-        tumhara hasna,
-        tumhari cute si nok-jhok...
+        Tumhari smile,
+        tumhari chhoti-chhoti baatein,
+        tumhari cute si nok-jhok,
+        tumhara mujhe irritate karna...
+
+        <br><br>
+
+        Pata nahi kab
+        ye sab meri life ka itna beautiful part ban gaya. 💗
 
         <br><br>
 
         <span class="highlight">
-          pata nahi kab ye sab mere liye itna special ban gaya. 💗
+          Main chahta hoon ki ek din
+          tum sirf meri girlfriend nahi,
+          balki meri wife banke
+          meri life ka hamesha wala part bano. ❤️
         </span>
 
         <br><br>
 
-        Aur honestly,
-        mujhe nahi chahiye ki sab kuch hamesha perfect ho.
+        Shaadi abhi hui nahi hai...
 
-        Bas itna chahta hoon ki
-        hum dono ke beech woh smile,
-        woh masti,
-        woh chhoti-chhoti conversations
-        hamesha bani rahein.
+        <br>
+
+        lekin dil mein ek future zaroor hai
+        jahan main tumhare saath
+        apni poori zindagi dekhna chahta hoon.
 
       </p>
 
@@ -823,7 +1049,9 @@
     <!-- SURPRISE BUTTON -->
 
     <button onclick="showSurprise()">
+
       Tumhare Liye Ek Surprise Hai 💌
+
     </button>
 
 
@@ -833,160 +1061,290 @@
 
       <p class="secretText">
 
+
         <span class="highlight">
           Mehak... ❤️
         </span>
 
+
         <br><br>
+
 
         Agar tum yahan tak aa gayi ho,
-        toh shayad tumhe pata chal hi gaya hoga
-        ki ye website sirf ek website nahi hai. 🥹
+        toh ab tumhe meri ek aur baat sunni padegi. 🥹
+
 
         <br><br>
 
-        Maine iske har ek part ko banate waqt
-        bas ek hi cheez sochi...
+
+        Main nahi jaanta ki main
+        apni feelings ko perfectly words mein explain kar paunga ya nahi...
 
         <br>
 
+        lekin ek cheez bilkul sach hai...
+
+
+        <br><br>
+
+
         <span class="highlight">
-          "Kaash ye dekhte waqt Mehak ke face par ek smile aa jaye." 💗
+          Main tumse bahut, bahut zyada pyaar karta hoon. ❤️
         </span>
 
-        <br><br>
-
-        Sach kahun toh,
-        mujhe nahi pata future mein kya hoga,
-        life humein kahan le jayegi,
-        aur kitni cheezein change hongi.
 
         <br><br>
 
-        Lekin aaj ke liye,
-        main bas itna kehna chahta hoon...
 
-        <br><br>
-
-        Tumse baat karna,
-        tumhare saath random bakwaas karna,
-        ek dusre ko irritate karna,
-        bina kisi reason ke hasna...
-
-        <br><br>
-
-        Ye sab mere liye
-        ordinary moments nahi hain.
+        Tum mere liye sirf aaj ki khushi nahi ho.
 
         <br>
 
-        <span class="highlight">
-          Ye woh little moments hain
-          jo meri memories ko special banate hain. 🥺❤️
-        </span>
+        Main tumhe apne kal mein bhi dekhna chahta hoon.
+
 
         <br><br>
 
-        Tumhari smile,
-        tumhari cute si nok-jhok,
-        tumhara randomly mujhe irritate karna,
-        aur phir kuch der baad normal ho jaana...
 
-        <br><br>
-
-        Pata nahi kab
-        ye sab meri favourite things ban gayi.
-
-        <br><br>
-
-        Main koi perfect insaan hone ka promise nahi karta.
-
-        <br><br>
-
-        Lekin ek chhoti si wish zaroor hai...
-
-        <br><br>
-
-        <span class="highlight">
-          Jab tum sad ho,
-          toh tumhe smile karane ki wajah ban paun. ❤️
-        </span>
-
-        <br><br>
-
-        Jab tum khush ho,
-        toh tumhari happiness ko
-        aur thoda celebrate kar paun.
-
-        <br><br>
-
-        Aur jab life difficult ho,
-        toh kam se kam itna yaad rahe
-        ki koi hai jo tumhari smile ko
-        genuinely important maanta hai.
-
-        <br><br>
-
-        Tum meri favourite notification ho,
-        favourite conversation ho,
-        favourite bakwaas partner ho...
-
-        <br><br>
-
-        <span class="highlight">
-          meri favourite person bhi ho. 💗
-        </span>
-
-        <br><br>
-
-        Thank you...
+        Main imagine karta hoon
+        ki ek din hum dono shaadi ke baad
+        ek saath honge...
 
         <br>
 
-        Meri life ke kuch moments ko
-        itna beautiful banane ke liye.
+        apni chhoti si duniya hogi...
+
+        <br>
+
+        chhoti-chhoti fights hongi...
+
+        <br>
+
+        phir ek dusre ko manaana hoga...
+
+        <br>
+
+        saath mein hasna hoga...
+
+        <br>
+
+        aur bahut saari memories banani hongi. 🥹💗
+
 
         <br><br>
+
+
+        Mujhe nahi chahiye ki hamari life
+        hamesha perfect ho.
+
+        <br>
+
+        Bas jab problems aayein,
+        toh hum dono ek dusre ka haath pakad kar
+        unhe saath mein face karein.
+
+
+        <br><br>
+
+
+        Tum sad ho toh
+        main tumhe smile karane ki koshish karun.
+
+        <br><br>
+
+        Tum khush ho toh
+        main tumhari happiness mein
+        tumhare saath khush rahun.
+
+
+        <br><br>
+
+
+        Tum mujhe irritate karo,
+        main tumhe irritate karun...
+
+        <br>
+
+        phir dono has dein. 😂❤️
+
+
+        <br><br>
+
+
+        Tumhari smile mere liye
+        genuinely bahut important hai.
+
+
+        <br><br>
+
+
+        Aur pata hai sabse beautiful thought kya hai?
+
+
+        <br><br>
+
+
+        <span class="highlight">
+          Aaj tum meri favourite person ho...
+
+          <br>
+
+          aur jis din hum shaadi karenge,
+          us din tum meri favourite wife banogi. ❤️
+        </span>
+
+
+        <br><br>
+
+
+        Main future ke baare mein
+        bahut saare promises nahi karunga.
+
+        <br>
+
+        Bas ek simple si wish hai...
+
+
+        <br><br>
+
+
+        <span class="highlight">
+          Main chahta hoon ki meri life ke
+          sabse important moments mein
+          tum mere saath raho. ❤️
+        </span>
+
+
+        <br><br>
+
+
+        Tumhare saath ek ghar banana...
+
+        <br>
+
+        saath mein coffee peena...
+
+        <br>
+
+        random baaton par hasna...
+
+        <br>
+
+        ek dusre ko annoy karna...
+
+        <br>
+
+        aur raat ko baith kar
+        poore din ki bakwaas discuss karna...
+
+
+        <br><br>
+
+
+        Shayad ye sab
+        chhoti-chhoti cheezein lagti hain...
+
+        <br>
+
+        lekin mere liye
+        yehi toh dream life hai.
+
+
+        <br><br>
+
+
+        <span class="highlight">
+          Aur us dream life mein
+          main tumhe hi dekhta hoon. ❤️
+        </span>
+
+
+        <br><br>
+
+
+        Thank you meri life mein aane ke liye.
+
+        <br>
+
+        Thank you meri smile ka reason banne ke liye.
+
+        <br>
 
         Thank you meri random conversations,
-        meri hasi,
         meri bakwaas,
-        aur meri memories ka
-        ek beautiful part banne ke liye.
+        meri happiness
+        aur meri memories ka part banne ke liye.
+
 
         <br><br>
+
+
+        Aur agar kabhi tumhe lage
+        ki main tumhe kitna pyaar karta hoon...
+
+        <br>
+
+        toh bas ye website dobara open kar lena. 🥹
+
+
+        <br><br>
+
+
+        <span class="highlight">
+          Because I don't just want
+          a moment with you...
+
+          <br><br>
+
+          I want a lifetime with you. ❤️
+        </span>
+
+
+        <br><br>
+
 
         <span class="highlight">
           I love you, Mehak. ❤️
         </span>
 
-        <br><br>
-
-        Agar tum abhi smile kar rahi ho...
 
         <br><br>
 
-        Toh samajh lo...
+
+        Aur haan...
 
         <br>
 
+        ek din jab hum sach mein shaadi karenge,
+        toh main tumhe ye website dikhaunga
+        aur bolunga...
+
+        <br><br>
+
+
         <span class="highlight">
-          mera mission successful ho gaya. 😂💗
+          "Dekha tha na...
+          maine pehle hi kaha tha,
+          tum meri favourite wife banogi." 😂❤️
         </span>
+
 
       </p>
 
 
       <p class="signature">
+
         Hamesha aise hi smile karti rehna. ✨
+
       </p>
 
     </div>
 
+
   </main>
 
 
-  <!-- WEBSITE FOOTER -->
+  <!-- FIXED FOOTER -->
 
   <div class="made-by">
     MADE BY AKRAM
@@ -995,51 +1353,73 @@
 
   <script>
 
-    /* TYPING ANIMATION */
+
+    /* =========================
+       TYPING ANIMATION
+    ========================= */
 
     const text =
       "Tumhare liye kuch chhota sa banaya hai... ❤️";
 
+
     let index = 0;
+
 
     function typeText() {
 
       if (index < text.length) {
 
-        document.getElementById("typing")
+        document
+          .getElementById("typing")
           .textContent += text.charAt(index);
 
         index++;
 
-        setTimeout(typeText, 65);
+        setTimeout(
+          typeText,
+          65
+        );
 
       }
 
     }
 
-    setTimeout(typeText, 900);
+
+    setTimeout(
+      typeText,
+      900
+    );
 
 
-    /* SURPRISE */
+    /* =========================
+       SURPRISE
+    ========================= */
 
     function showSurprise() {
 
       const secret =
         document.getElementById("secret");
 
+
       const button =
         document.querySelector("button");
 
+
       secret.classList.toggle("show");
 
-      if (secret.classList.contains("show")) {
+
+      if (
+        secret.classList.contains("show")
+      ) {
 
         button.textContent =
-          "Bas Ab Smile Kar Do ❤️";
+          "Ab Bas Smile Kar Do Meri Future Wife ❤️";
 
         createHeartBurst();
 
-      } else {
+      }
+
+      else {
 
         button.textContent =
           "Tumhare Liye Ek Surprise Hai 💌";
@@ -1049,63 +1429,104 @@
     }
 
 
-    /* HEART BURST */
+    /* =========================
+       HEART BURST
+    ========================= */
 
     function createHeartBurst() {
 
       const hearts = [
+
         "❤️",
         "💗",
         "💕",
         "💖",
         "💘",
         "✨",
-        "🥹"
+        "🥹",
+        "💞"
+
       ];
 
-      for (let i = 0; i < 22; i++) {
+
+      for (
+        let i = 0;
+        i < 25;
+        i++
+      ) {
 
         const heart =
           document.createElement("div");
 
+
         heart.textContent =
           hearts[
             Math.floor(
-              Math.random() * hearts.length
+              Math.random() *
+              hearts.length
             )
           ];
 
-        heart.style.position = "fixed";
 
-        heart.style.left = "50%";
-        heart.style.top = "55%";
+        heart.style.position =
+          "fixed";
+
+
+        heart.style.left =
+          "50%";
+
+
+        heart.style.top =
+          "55%";
+
 
         heart.style.fontSize =
-          (14 + Math.random() * 18) + "px";
+          (
+            14 +
+            Math.random() * 18
+          ) + "px";
+
 
         heart.style.pointerEvents =
           "none";
 
-        heart.style.zIndex = "9999";
 
-        document.body.appendChild(heart);
+        heart.style.zIndex =
+          "99999";
+
+
+        document.body.appendChild(
+          heart
+        );
+
 
         const x =
-          (Math.random() - .5) * 500;
+          (
+            Math.random() - .5
+          ) * 500;
+
 
         const y =
-          (Math.random() - .5) * 400;
+          (
+            Math.random() - .5
+          ) * 400;
+
 
         heart.animate(
+
           [
+
             {
+
               transform:
                 "translate(-50%, -50%) scale(.5)",
 
               opacity: 1
+
             },
 
             {
+
               transform:
                 `translate(
                   calc(-50% + ${x}px),
@@ -1114,16 +1535,24 @@
                 scale(1.4)`,
 
               opacity: 0
+
             }
+
           ],
+
           {
+
             duration:
-              1000 + Math.random() * 700,
+              1000 +
+              Math.random() * 700,
 
             easing:
               "cubic-bezier(.2,.8,.2,1)"
+
           }
+
         );
+
 
         setTimeout(
           () => heart.remove(),
@@ -1135,36 +1564,49 @@
     }
 
 
-    /* CLICK HEART */
+    /* =========================
+       CLICK HEART
+    ========================= */
 
     document.addEventListener(
       "click",
       function(event) {
 
+
         if (
-          event.target.tagName === "BUTTON"
+          event.target.tagName ===
+          "BUTTON"
         ) {
           return;
         }
 
+
         const heart =
           document.createElement("div");
 
+
         heart.className =
           "click-heart";
+
 
         heart.textContent =
           Math.random() > .5
             ? "💗"
             : "✨";
 
+
         heart.style.left =
           event.clientX + "px";
+
 
         heart.style.top =
           event.clientY + "px";
 
-        document.body.appendChild(heart);
+
+        document.body.appendChild(
+          heart
+        );
+
 
         setTimeout(
           () => heart.remove(),
